@@ -35,7 +35,7 @@
               >
             </div>
             <div class="col-4">
-              <label for="clientOnePeerId" class="visually-hidden">Client 2</label>
+              <label for="partnerPeerId" class="visually-hidden">Client 2</label>
               <input 
                 type="text" 
                 class="form-control" 
@@ -52,35 +52,7 @@
         </div>
       </div>
 
-      <div class="card mt-5">
-        <div class="card-header">
-          Message from partner
-        </div>
-
-        <div class="card-body">
-          <div class="row py-5 g-3 " style="text-align: center;">
-            <span id="partnerMessage" ></span>
-           
-          </div>
-
-          <div class="row pb-5 g-3 justify-content-md-center">
-
-            <div class="col-4">
-              <label for="message" class="visually-hidden">Message</label>
-              <input 
-                type="text" 
-                class="form-control" 
-                id="message"
-              >
-            </div>
-            
-            <div class="col-auto">
-              <button type="submit" id="send" class="btn btn-primary">Send</button>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+      
 
 
      
@@ -100,50 +72,23 @@
     -->
 
     <script>
-      // document.getElementById('status').classList.remove('active')
-      // document.getElementById('status').classList.add('inactive')
 
-      // let peer = new Peer();  // peer object    
+      let peer = new Peer();
 
-      // // Get the peer id
-      // peer.on('open', function(peerId) {
-      //   document.getElementById("myPeerId").value = peerId;
-      // });
+      peer.on('open', (peerId) => {
+        document.getElementById('myPeerId').value = peerId;
+      })
 
-      // // Connect with your partner
-      // document.getElementById("connect").addEventListener("click", () => {
-      //   let partnerPeerId = document.getElementById('partnerPeerId').value;
-      //   let connection = peer.connect(partnerPeerId);
+      document.getElementById('connect').addEventListener('click', () => {
+        let partnerPeerId = document.getElementById('partnerPeerId').value;
+        let connection = peer.connect(partnerPeerId);
+        connection.on('open', () => {
+          document.getElementById('status').classList.remove('inactive') 
+          document.getElementById('status').classList.add('active') 
+        })
+      })
 
-      //   connection.on('open', () => {
-      //     document.getElementById('status').classList.remove('inactive')
-      //     document.getElementById('status').classList.add('active')
-      //     receivedMessage()
-      //   })
-
-      // })
-
-      // // Send Message 
-      // document.getElementById("send").addEventListener("click", () => {
-      //   let partnerPeerId = document.getElementById('partnerPeerId').value;
-      //   let msg = document.getElementById('message').value;
-      //   let connection = peer.connect(partnerPeerId);
-
-      //   connection.on('open', () => {
-      //     connection.send(msg);
-      //   })
-        
-      // })
-
-      // // Received Message
-      // function receivedMessage(){
-      //   peer.on('connection', function(connection) {
-      //     connection.on('data', function(data) {
-      //       document.getElementById('partnerMessage').innerHTML = data;
-      //     })
-      //   })
-      // } 
-
+    
 
     </script>
     
