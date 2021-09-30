@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <title>Client 2</title>
+  </head>
+  <body>
+    <div class="container pt-5">
+
+      <div class="card">
+        <div class="card-header">
+          Client 2 
+          <span class="inactive" id="status"></span>
+        </div>
+
+        <div class="card-body">
+          <div class="row py-5 g-3 justify-content-md-center">
+            <div class="col-4">
+              <label for="myPeerId" class="visually-hidden">Peer Id</label>
+              <input 
+                type="text" 
+                readonly 
+                class="form-control-plaintext" 
+                id="myPeerId" 
+                value="XXXXXXXXXXXXXX" 
+                data-bs-toggle="tooltip" 
+                title="Client 2"
+              >
+            </div>
+            <div class="col-4">
+              <label for="clientOnePeerId" class="visually-hidden">Client 2</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="partnerPeerId" 
+                placeholder="Partner peer id"
+              >
+
+            </div>
+            <div class="col-auto">
+              <button type="submit" id="connect" class="btn btn-dark">Connect</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-5">
+        <div class="card-header">
+          Message from partner
+        </div>
+
+        <div class="card-body">
+          <div class="row py-5 g-3 " style="text-align: center;">
+            <span id="partnerMessage" ></span>
+           
+          </div>
+
+          <div class="row pb-5 g-3 justify-content-md-center">
+
+            <div class="col-4">
+              <label for="message" class="visually-hidden">Message</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="message"
+              >
+            </div>
+            
+            <div class="col-auto">
+              <button type="submit" id="send" class="btn btn-primary">Send</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+     
+    </div>
+
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+      // document.getElementById('status').classList.remove('active')
+      // document.getElementById('status').classList.add('inactive')
+
+      // let peer = new Peer();  // peer object    
+
+      // // Get the peer id
+      // peer.on('open', function(peerId) {
+      //   document.getElementById("myPeerId").value = peerId;
+      // });
+
+      // // Connect with your partner
+      // document.getElementById("connect").addEventListener("click", () => {
+      //   let partnerPeerId = document.getElementById('partnerPeerId').value;
+      //   let connection = peer.connect(partnerPeerId);
+
+      //   connection.on('open', () => {
+      //     document.getElementById('status').classList.remove('inactive')
+      //     document.getElementById('status').classList.add('active')
+      //     receivedMessage()
+      //   })
+
+      // })
+
+      // // Send Message 
+      // document.getElementById("send").addEventListener("click", () => {
+      //   let partnerPeerId = document.getElementById('partnerPeerId').value;
+      //   let msg = document.getElementById('message').value;
+      //   let connection = peer.connect(partnerPeerId);
+
+      //   connection.on('open', () => {
+      //     connection.send(msg);
+      //   })
+        
+      // })
+
+      // // Received Message
+      // function receivedMessage(){
+      //   peer.on('connection', function(connection) {
+      //     connection.on('data', function(data) {
+      //       document.getElementById('partnerMessage').innerHTML = data;
+      //     })
+      //   })
+      // } 
+
+
+    </script>
+    
+  </body>
+</html>
